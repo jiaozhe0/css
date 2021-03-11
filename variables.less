@@ -14,12 +14,12 @@
 @color-text-gray: #999; //灰色文案
 @color-text-gray-light: #ccc; //更灰色文案
 
-@color-split: #e7e7e7;  //分割线的颜色
-@color-border:#ddd;
-@color-background:#fff;
+@color-split: #e7e7e7; //分割线的颜色
+@color-border: #ddd;
+@color-background: #fff;
 
 // font-family
-@font-family-sans-serif: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+@font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
 @font-family-serif: Georgia, "Times New Roman", Times, SimSun, "FontAwesome", serif; //FangSong, STFangSong
 @font-family-monospace: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
 @font-family-kai: Georgia, "Times New Roman", Times, Kai, "Kaiti SC", KaiTi, BiauKai, "FontAwesome", serif;
@@ -31,75 +31,75 @@
 @font-size-xxs: @font-size - 0.6; // 10px
 @font-size-xs: @font-size - 0.4; // 12px
 @font-size-sm: @font-size - 0.2; // 14px
-@font-size-lg:            @font-size + 0.2; // 18px
-@font-size-xl:            @font-size + 0.8; // 24px
-@font-size-xxl:           @font-size * 2;   // 32px
-@font-size-xxxl:          @font-size * 2 + 1; // 42px
+@font-size-lg: @font-size + 0.2; // 18px
+@font-size-xl: @font-size + 0.8; // 24px
+@font-size-xxl: @font-size * 2; // 32px
+@font-size-xxxl: @font-size * 2 + 1; // 42px
 
 // 间距
-@global-spacing:                1.6rem;
+@global-spacing: 1.6rem;
 
-@global-spacing-xs:             0.5rem;
-@global-spacing-sm:             1rem;
-@global-spacing-lg:             2.4rem;
-@global-spacing-xl:             3.2rem;
+@global-spacing-xs: 0.5rem;
+@global-spacing-sm: 1rem;
+@global-spacing-lg: 2.4rem;
+@global-spacing-xl: 3.2rem;
 
 
 // Margin
 // -----------------------------------------------------------------------------
-@margin:									  @global-spacing; // 1.6rem 16px
+@margin: @global-spacing; // 1.6rem 16px
 
-@margin-xs:							  @global-spacing-xs; // 5px
-@margin-sm:							  @global-spacing-sm; // 10px
+@margin-xs: @global-spacing-xs; // 5px
+@margin-sm: @global-spacing-sm; // 10px
 
-@margin-lg:							  @global-spacing-lg; // 24px
-@margin-xl:							  @global-spacing-xl; // 32px
+@margin-lg: @global-spacing-lg; // 24px
+@margin-xl: @global-spacing-xl; // 32px
 // 层级
 
 // Breakpoint
 // -----------------------------------------------------------------------------
-@breakpoint-small:            640px;  // 0 - 640px
-@breakpoint-medium:           1024px; // 641 - 1024px
-@breakpoint-large:            1280px; // 1025 - 1280px
-@breakpoint-xl:               1440px; // 1281 - 1440px
-@breakpoint-xxl:              1920px; // 1441 -1920px
+@breakpoint-small: 640px; // 0 - 640px
+@breakpoint-medium: 1024px; // 641 - 1024px
+@breakpoint-large: 1280px; // 1025 - 1280px
+@breakpoint-xl: 1440px; // 1281 - 1440px
+@breakpoint-xxl: 1920px; // 1441 -1920px
 
-@breakpoint-small-max:        @breakpoint-small;
-@breakpoint-md:               @breakpoint-small-max; // legacy var, DO NOT USE IT
+@breakpoint-small-max: @breakpoint-small;
+@breakpoint-md: @breakpoint-small-max; // legacy var, DO NOT USE IT
 
-@breakpoint-medium-min:       (@breakpoint-small + 1);
-@breakpoint-medium-max:       @breakpoint-medium;
+@breakpoint-medium-min: (@breakpoint-small + 1);
+@breakpoint-medium-max: @breakpoint-medium;
 
-@breakpoint-large-min:        (@breakpoint-medium + 1);
-@breakpoint-large-max:        @breakpoint-large;
+@breakpoint-large-min: (@breakpoint-medium + 1);
+@breakpoint-large-max: @breakpoint-large;
 
-@breakpoint-xl-min:           (@breakpoint-large + 1);
-@breakpoint-xl-max:           @breakpoint-xl;
+@breakpoint-xl-min: (@breakpoint-large + 1);
+@breakpoint-xl-max: @breakpoint-xl;
 
-@breakpoint-xxl-min:          (@breakpoint-xl + 1);
-@breakpoint-xxl-max:          @breakpoint-xxl;
+@breakpoint-xxl-min: (@breakpoint-xl + 1);
+@breakpoint-xxl-max: @breakpoint-xxl;
 
 
 // Media Queries
 // NOTE '~' in the beginning - media query must be escaped
 // -----------------------------------------------------------------------------
 
-@screen:        ~"only screen";
+@screen: ~"only screen";
 
-@landscape:     ~"@{screen} and (orientation: landscape)";
-@portrait:      ~"@{screen} and (orientation: portrait)";
+@landscape: ~"@{screen} and (orientation: landscape)";
+@portrait: ~"@{screen} and (orientation: portrait)";
 
-@small-up:      ~"@{screen}";
-@small-only:    ~"@{screen} and (max-width: @{breakpoint-small-max})";
+@small-up: ~"@{screen}";
+@small-only: ~"@{screen} and (max-width: @{breakpoint-small-max})";
 
-@medium-up:     ~"@{screen} and (min-width:@{breakpoint-medium-min})";
-@medium-only:   ~"@{screen} and (min-width:@{breakpoint-medium-min}) and (max-width:@{breakpoint-medium-max})";
+@medium-up: ~"@{screen} and (min-width:@{breakpoint-medium-min})";
+@medium-only: ~"@{screen} and (min-width:@{breakpoint-medium-min}) and (max-width:@{breakpoint-medium-max})";
 
-@large-up:      ~"@{screen} and (min-width:@{breakpoint-large-min})";
-@large-only:    ~"@{screen} and (min-width:@{breakpoint-large-min}) and (max-width:@{breakpoint-large-max})";
+@large-up: ~"@{screen} and (min-width:@{breakpoint-large-min})";
+@large-only: ~"@{screen} and (min-width:@{breakpoint-large-min}) and (max-width:@{breakpoint-large-max})";
 
-@xl-up:         ~"@{screen} and (min-width:@{breakpoint-xl-min})";
-@xl-only:       ~"@{screen} and (min-width:@{breakpoint-xl-min}) and (max-width:@{breakpoint-xl-max})";
+@xl-up: ~"@{screen} and (min-width:@{breakpoint-xl-min})";
+@xl-only: ~"@{screen} and (min-width:@{breakpoint-xl-min}) and (max-width:@{breakpoint-xl-max})";
 
-@xxl-up:        ~"@{screen} and (min-width:@{breakpoint-xxl-min})";
-@xxl-only:      ~"@{screen} and (min-width:@{breakpoint-xxl-min}) and (max-width:@{breakpoint-xxl-max})";
+@xxl-up: ~"@{screen} and (min-width:@{breakpoint-xxl-min})";
+@xxl-only: ~"@{screen} and (min-width:@{breakpoint-xxl-min}) and (max-width:@{breakpoint-xxl-max})";

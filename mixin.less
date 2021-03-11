@@ -1,18 +1,40 @@
+.clearfix() {
+
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .size(@width; @height) {
   width: @width;
   height: @height;
 }
+
 .square(@size) {
   .size(@size; @size);
 }
+
 // 文本
-.text-overflow(@diplay:block) {
+.text-overflow(@diplay: block) {
   display: @diplay;
   word-wrap: normal;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
+
 // 文本显示行数
 .am-line-clamp(@lines, @line-height: 1.3em) {
   text-overflow: ellipsis;
@@ -23,14 +45,17 @@
   line-height: @line-height;
   max-height: @line-height * @lines;
 }
+
 .img-responsive(@display: block) {
   display: @display;
   max-width: 100%; // Part 1: Set a maximum relative to the parent
   height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
 }
+
 // Placeholder text 
 // -----------------------------------------------------------------------------
 .placeholder(@color: @input-color-placeholder) {
+
   // Firefox
   &::-moz-placeholder {
     color: @color;
@@ -48,22 +73,25 @@
   }
 }
 
-.scroll-y(@thumbColor:#535353;@trackColor:#EDEDED) {
+.scroll-y(@thumbColor: #535353; @trackColor: #EDEDED) {
   overflow-y: auto;
+
   /*滚动条整体样式*/
   &::-webkit-scrollbar {
     width: 10px;
     height: 1px;
   }
- /*滚动条里面小方块*/
-  &::-webkit-scrollbar-thumb{
+
+  /*滚动条里面小方块*/
+  &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     background: @thumbColor;
   }
+
   /*滚动条里面轨道*/
   &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     background: @trackColor;
   }
@@ -78,6 +106,7 @@
   -ms-user-select: @select; // IE10+
   user-select: @select;
 }
+
 // 渐变
 .gradient-horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
   background-image: -webkit-gradient(linear, @start-percent top, @end-percent top, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
@@ -85,7 +114,7 @@
   background-image: -moz-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
   background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
   background-repeat: repeat-x;
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color), argb(@end-color))); // IE9 and down
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", argb(@start-color), argb(@end-color))); // IE9 and down
 }
 
 // Vertical gradient, from top to bottom
@@ -97,7 +126,7 @@
   background-image: -moz-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
   background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
   background-repeat: repeat-x;
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color), argb(@end-color))); // IE9 and down
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", argb(@start-color), argb(@end-color))); // IE9 and down
 }
 
 // Transformations
@@ -109,18 +138,21 @@
   -o-transform: scale(@ratio);
   transform: scale(@ratio);
 }
+
 .scale(@ratioX; @ratioY) {
   -webkit-transform: scale(@ratioX, @ratioY);
   -ms-transform: scale(@ratioX, @ratioY); // IE9 only
   -o-transform: scale(@ratioX, @ratioY);
   transform: scale(@ratioX, @ratioY);
 }
+
 .scaleX(@ratio) {
   -webkit-transform: scaleX(@ratio);
   -ms-transform: scaleX(@ratio); // IE9 only
   -o-transform: scaleX(@ratio);
   transform: scaleX(@ratio);
 }
+
 .scaleY(@ratio) {
   -webkit-transform: scaleY(@ratio);
   -ms-transform: scaleY(@ratio); // IE9 only
@@ -152,10 +184,10 @@
   transform: translateY(@y);
 }
 
-.translate3d(@x:0; @y:0; @z:0) {
-  -webkit-transform: translate3d(@x,@y,@z);
-  -ms-transform: translate3d(@x,@y,@z);
-  transform: translate3d(@x,@y,@z);
+.translate3d(@x: 0; @y: 0; @z: 0) {
+  -webkit-transform: translate3d(@x, @y, @z);
+  -ms-transform: translate3d(@x, @y, @z);
+  transform: translate3d(@x, @y, @z);
 }
 
 .rotate(@degrees) {
@@ -241,8 +273,9 @@
   display: -webkit-flex;
   display: flex;
 }
+
 /*是否换行*/
-.flex-wrap(@fw) when (@fw = nowrap) {
+.flex-wrap(@fw) when (@fw =nowrap) {
   -webkit-box-lines: single;
   -moz-box-lines: single;
   -webkit-flex-wrap: nowrap;
@@ -250,14 +283,16 @@
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
-.flex-wrap(@fw) when (@fw = wrap) {
+
+.flex-wrap(@fw) when (@fw =wrap) {
   -webkit-box-lines: multiple;
   -moz-box-lines: multiple;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-.flex-wrap(@fw) when not (@fw = wrap) and not (@fw = nowrap) {
+
+.flex-wrap(@fw) when not (@fw =wrap) and not (@fw =nowrap) {
   -webkit-flex-wrap: @fw;
   -ms-flex-wrap: @fw;
   flex-wrap: @fw;
@@ -268,53 +303,62 @@
   -ms-flex: 0 @fs auto;
   flex-shrink: @fs;
 }
-.justify-content(@jc) when (@jc = flex-start) {
+
+.justify-content(@jc) when (@jc =flex-start) {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
 }
-.justify-content(@jc) when (@jc = flex-end) {
+
+.justify-content(@jc) when (@jc =flex-end) {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
-.justify-content(@jc) when (@jc = space-between) {
+
+.justify-content(@jc) when (@jc =space-between) {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-.justify-content(@jc) when not (@jc = flex-start) and not (@jc = flex-end) and not (@jc = space-between) {
+
+.justify-content(@jc) when not (@jc =flex-start) and not (@jc =flex-end) and not (@jc =space-between) {
   -webkit-box-pack: @jc;
   -ms-flex-pack: @jc;
   -webkit-justify-content: @jc;
   justify-content: @jc;
 }
-.align-items(@ai) when (@ai = flex-start) {
+
+.align-items(@ai) when (@ai =flex-start) {
   -webkit-box-align: start;
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
   align-items: flex-start;
 }
-.align-items(@ai) when (@ai = flex-end) {
+
+.align-items(@ai) when (@ai =flex-end) {
   -webkit-box-align: end;
   -ms-flex-align: end;
   -webkit-align-items: flex-end;
   align-items: flex-end;
 }
-.align-items(@ai) when not (@ai = flex-start) and not (@ai = flex-end) {
+
+.align-items(@ai) when not (@ai =flex-start) and not (@ai =flex-end) {
   -webkit-box-align: @ai;
   -ms-flex-align: @ai;
   -webkit-align-items: @ai;
   align-items: @ai;
 }
+
 .align-content(@ai) {
   -ms-flex-line-pack: @ai;
   -webkit-align-content: @ai;
   align-content: @ai;
 }
+
 .align-self(@as) {
   -ms-flex-item-align: @as;
   -webkit-align-self: @as;
