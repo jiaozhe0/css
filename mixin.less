@@ -26,6 +26,13 @@
   .size(@size; @size);
 }
 
+.square-block(@width: 100%) {
+  position: relative;
+  padding-bottom: 100%;
+  width: @width;
+  height: 0;
+}
+
 // 文本
 .text-overflow(@diplay: block) {
   display: @diplay;
@@ -50,6 +57,7 @@
   display: @display;
   max-width: 100%; // Part 1: Set a maximum relative to the parent
   height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+  object-fit: cover;
 }
 
 // Placeholder text 
